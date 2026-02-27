@@ -1,1 +1,103 @@
-coba html andre
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validasi Password</title>
+    <link rel="stylesheet" type="text/css" href="style.css"
+</head>
+<body>
+    <form id="registrationForm">
+        <h2>Formulir Reservasi Badminton</h2>
+
+        <div class="form-group">
+           <label for="id_reservasi">ID Resevarsi</label>
+           <span class="separator">:</span>
+           <input type="text" id="id_reservasi" name="id_reservasi" required>
+        </div>
+
+        <div class="form-group">
+           <label for="id_pengguna">ID Pengguna</label>
+           <span class="separator">:</span>
+           <input type="text" id="id_pengguna" name="id_pengguna" required>
+        </div>
+
+        <div class="form-group">
+           <label for="id_lapangan">ID Lapangan</label>
+           <span class="separator">:</span>
+           <input type="text" id="id_lapangan" name="id_lapangan" required>
+        </div>
+
+         <div class="form-group">
+           <label for="tanggal_booking">Tanggal Booking</label>
+           <span class="separator">:</span>
+           <input type="date" id="tanggal_booking" name="tanggal_booking" required>
+        </div>
+
+        <div class="form-group">
+    <label for="jam_mulai">Jam Mulai</label>
+    <span class="separator">:</span>
+
+    <select id="jam_mulai" name="jam_mulai" required>
+        <option value="">-- Pilih Jam --</option>
+        <option value="08:00">08:00</option>
+        <option value="09:00">09:00</option>
+        <option value="10:00">10:00</option>
+        <option value="11:00">11:00</option>
+        <option value="12:00">12:00</option>
+        <option value="13:00">13:00</option>
+        <option value="14:00">14:00</option>
+        <option value="15:00">15:00</option>
+        <option value="16:00">16:00</option>
+        <option value="17:00">17:00</option>
+        <option value="18:00">18:00</option>
+        <option value="19:00">19:00</option>
+        <option value="20:00">20:00</option>
+    </select>
+</div>
+
+
+<div class="form-group">
+    <label for="jam_selesai">Jam Selesai</label>
+    <span class="separator">:</span>
+
+    <select id="jam_selesai" name="jam_selesai" required>
+        <option value="">-- Pilih Jam --</option>
+        <option value="08:00">08:00</option>
+        <option value="09:00">09:00</option>
+        <option value="10:00">10:00</option>
+        <option value="11:00">11:00</option>
+        <option value="12:00">12:00</option>
+        <option value="13:00">13:00</option>
+        <option value="14:00">14:00</option>
+        <option value="15:00">15:00</option>
+        <option value="16:00">16:00</option>
+        <option value="17:00">17:00</option>
+        <option value="18:00">18:00</option>
+        <option value="19:00">19:00</option>
+        <option value="20:00">20:00</option>
+    </select>
+</div>
+
+        <div class="form-group">
+           <label for="durasi">Durasi</label>
+           <span class="separator">:</span>
+           <input type="text" id="durasi" name="durasi" required>
+        </div>
+
+        <div class="form-group">
+           <label for="total_biaya">Total Biaya</label>
+           <span class="separator">:</span>
+           <input type="text" id="total_biaya" name="total_biaya" required>
+        </div>
+
+        <div class="form-group">
+           <label for="status_reservasi">Status Reservasi</label>
+           <span class="separator">:</span>
+           <input type="text" id="status_reservasi" name="status_reservasi" required>
+        </div>
+
+        <input type="submit" value="Daftar" style="background-color:green">
+    </form>
+</body>
+</html>
