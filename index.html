@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservasi Badminton</title>
-    <link rel="stylesheet" type="text/css" href="style.css"
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <form id="registrationForm">
+    <form onsubmit="return validasiNama()" id="registrationForm">
         <h2>Formulir Reservasi Badminton</h2>
 
         <div class="form-group">
@@ -99,5 +99,7 @@
 
         <input type="submit" value="Reservasi" style="background-color:#6367FF">
     </form>
+
+    <script src="script.js"></script>
 </body>
 </html>
