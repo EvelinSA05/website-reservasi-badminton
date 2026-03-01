@@ -16,5 +16,4 @@ Website Reservasi Lapangan Badminton adalah aplikasi berbasis web sederhana yang
 
 ## 🖥️ Tampilan Website
 
-bash
 ![Preview Website](screenshot.png)
