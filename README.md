@@ -1,6 +1,6 @@
-# 🏸 Website Reservasi Badminton
+# 🏸 Website Reservasi Lapangan Badminton
 
-Website Reservasi Badminton adalah aplikasi berbasis web sederhana yang dibuat menggunakan **HTML, CSS, dan JavaScript** untuk memudahkan pengguna melakukan pemesanan lapangan badminton secara online.
+Website Reservasi Lapangan Badminton adalah aplikasi berbasis web sederhana yang dibuat menggunakan **HTML, CSS, dan JavaScript** untuk memudahkan pengguna melakukan pemesanan lapangan badminton secara online.
 
 ---
 
@@ -18,5 +18,5 @@ Website Reservasi Badminton adalah aplikasi berbasis web sederhana yang dibuat m
 
 > Tambahkan screenshot website kamu di sini nanti ya 👇  
 
-```bash
+bash
 ![Preview Website](screenshot.png)
