@@ -1,105 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Reservasi Badminton</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <meta name="description" content="Website reservasi lapangan badminton online.">
+    <meta name="author" content="Nama Kamu">
+
+    <!-- Favicon emoji badminton -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏸%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <form onsubmit="return validasiNama()" id="registrationForm">
-        <h2>Formulir Reservasi Badminton</h2>
+    <!-- Glowing 3D Badminton Court Background -->
+    <div class="glowing-court">
+        <div class="court-line court-outer"></div>
+        <div class="court-line court-half"></div>
+        <div class="court-line court-short-service-top"></div>
+        <div class="court-line court-short-service-bottom"></div>
+        <div class="court-line court-center"></div>
+        <div class="court-line court-singles-left"></div>
+        <div class="court-line court-singles-right"></div>
+        <div class="court-net"></div>
+    </div>
+    <div class="floating-objects">
+        <div class="shuttlecock sc-1">🏸</div>
+        <div class="shuttlecock sc-2">🏸</div>
+        <div class="shuttlecock sc-3">🏸</div>
+        <div class="shuttlecock sc-4">🏸</div>
+        <div class="shuttlecock sc-5">🏸</div>
+        <div class="shuttlecock sc-6">🏸</div>
+    </div>
 
-        <div class="form-group">
-           <label for="id_reservasi">ID Resevarsi</label>
-           <span class="separator">:</span>
-           <input type="text" id="id_reservasi" name="id_reservasi" required>
+    <div class="form-wrapper">
+        <form onsubmit="return validasiNama(event)" id="registrationForm">
+            <h2>Formulir Reservasi Badminton</h2>
+
+            <div class="form-group">
+                <label for="id_pengguna">Nama Pengguna</label>
+                <span class="separator">:</span>
+                <div class="input-container">
+                    <input type="text" id="id_pengguna" name="id_pengguna" placeholder="Masukkan nama Anda...">
+                    <span id="nameError" class="validation-error">⚠️ Nama hanya boleh berisi huruf dan spasi.</span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="tanggal_booking">Tanggal Booking</label>
+                <span class="separator">:</span>
+                <input type="date" id="tanggal_booking" name="tanggal_booking">
+            </div>
+
+            <div class="form-group">
+                <label for="jam_mulai">Jam Mulai</label>
+                <span class="separator">:</span>
+
+                <select id="jam_mulai" name="jam_mulai">
+                    <option value="">-- Pilih Jam --</option>
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="jam_selesai">Jam Selesai</label>
+                <span class="separator">:</span>
+
+                <select id="jam_selesai" name="jam_selesai">
+                    <option value="">-- Pilih Jam --</option>
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Reservasi">
+        </form>
+
+        <!-- Success Animation Container -->
+        <div class="success-message" id="successMessage" style="display: none;">
+            <div class="checkmark-wrapper">
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                </svg>
+            </div>
+            <h3>Reservasi Berhasil!</h3>
+            <p>Lapangan kamu sudah kami siapkan.</p>
+            <button class="reset-btn" onclick="resetForm()">Reservasi Baru</button>
         </div>
 
-        <div class="form-group">
-           <label for="id_pengguna">ID Pengguna</label>
-           <span class="separator">:</span>
-           <input type="text" id="id_pengguna" name="id_pengguna" required>
+    </div>
+
+    <!-- Custom Error Alert Popup -->
+    <div class="custom-alert-overlay" id="customAlertOverlay">
+        <div class="custom-alert-box">
+            <div class="alert-icon">⚠️</div>
+            <h3 class="alert-title">Validasi Gagal!</h3>
+            <p class="alert-text">Mohon lengkapi semua kolom isian yang berwarna merah sebelum melakukan reservasi.</p>
+            <button class="alert-btn" type="button" onclick="closeErrorAlert()">Mengerti</button>
         </div>
-
-        <div class="form-group">
-           <label for="id_lapangan">ID Lapangan</label>
-           <span class="separator">:</span>
-           <input type="text" id="id_lapangan" name="id_lapangan" required>
-        </div>
-
-         <div class="form-group">
-           <label for="tanggal_booking">Tanggal Booking</label>
-           <span class="separator">:</span>
-           <input type="date" id="tanggal_booking" name="tanggal_booking" required>
-        </div>
-
-        <div class="form-group">
-    <label for="jam_mulai">Jam Mulai</label>
-    <span class="separator">:</span>
-
-    <select id="jam_mulai" name="jam_mulai" required>
-        <option value="">-- Pilih Jam --</option>
-        <option value="08:00">08:00</option>
-        <option value="09:00">09:00</option>
-        <option value="10:00">10:00</option>
-        <option value="11:00">11:00</option>
-        <option value="12:00">12:00</option>
-        <option value="13:00">13:00</option>
-        <option value="14:00">14:00</option>
-        <option value="15:00">15:00</option>
-        <option value="16:00">16:00</option>
-        <option value="17:00">17:00</option>
-        <option value="18:00">18:00</option>
-        <option value="19:00">19:00</option>
-        <option value="20:00">20:00</option>
-    </select>
-</div>
-
-
-<div class="form-group">
-    <label for="jam_selesai">Jam Selesai</label>
-    <span class="separator">:</span>
-
-    <select id="jam_selesai" name="jam_selesai" required>
-        <option value="">-- Pilih Jam --</option>
-        <option value="08:00">08:00</option>
-        <option value="09:00">09:00</option>
-        <option value="10:00">10:00</option>
-        <option value="11:00">11:00</option>
-        <option value="12:00">12:00</option>
-        <option value="13:00">13:00</option>
-        <option value="14:00">14:00</option>
-        <option value="15:00">15:00</option>
-        <option value="16:00">16:00</option>
-        <option value="17:00">17:00</option>
-        <option value="18:00">18:00</option>
-        <option value="19:00">19:00</option>
-        <option value="20:00">20:00</option>
-    </select>
-</div>
-
-        <div class="form-group">
-           <label for="durasi">Durasi</label>
-           <span class="separator">:</span>
-           <input type="text" id="durasi" name="durasi" required>
-        </div>
-
-        <div class="form-group">
-           <label for="total_biaya">Total Biaya</label>
-           <span class="separator">:</span>
-           <input type="text" id="total_biaya" name="total_biaya" required>
-        </div>
-
-        <div class="form-group">
-           <label for="status_reservasi">Status Reservasi</label>
-           <span class="separator">:</span>
-           <input type="text" id="status_reservasi" name="status_reservasi" required>
-        </div>
-
-        <input type="submit" value="Reservasi" style="background-color:#6367FF">
-    </form>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
