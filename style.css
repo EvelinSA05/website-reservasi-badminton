@@ -1,24 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: 'Outfit', sans-serif;
-    display: flex;
-    justify-content: center;
-    /* Ubah alignment dari center (tengah) menjadi flex-start (atas) */
-    align-items: flex-start;
-    min-height: 100vh;
-    /* Tambah padding atas agar form sedikit turun dari ujung paling atas layar tapi lebih tinggi dari sebelumnya */
-    padding: 6vh 20px 80px 20px;
-    color: #333;
-    position: relative;
-    overflow-x: hidden;
-}
+
+
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -507,18 +491,7 @@ form {
     }
 }
 
-h2 {
-    text-align: center;
-    color: #fff;
-    /* White text for dark glass */
-    font-weight: 600;
-    margin-bottom: 25px;
-    font-size: 26px;
-    letter-spacing: -0.5px;
-    animation: fadeInDown 0.8s ease-out backwards;
-    text-shadow: 0 2px 10px rgba(255, 0, 255, 0.5);
-    /* Glow for header */
-}
+
 
 @keyframes fadeInDown {
     from {
@@ -569,25 +542,11 @@ h2 {
     }
 }
 
-.success-message h3 {
-    font-size: 28px;
-    margin: 20px 0 10px;
-    color: #00ffff;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-}
 
-.success-message p {
-    font-size: 16px;
-    color: #ccc;
-    margin-bottom: 30px;
-}
 
-/* Animated SVG Checkmark */
-.checkmark-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
+
+
+
 
 .checkmark {
     width: 80px;
@@ -703,11 +662,7 @@ h2 {
     transform: scale(1) translateY(0);
 }
 
-.alert-icon {
-    font-size: 55px;
-    margin-bottom: 10px;
-    animation: pulseAlert 1.5s infinite alternate;
-}
+
 
 @keyframes pulseAlert {
     from {
@@ -721,20 +676,9 @@ h2 {
     }
 }
 
-.alert-title {
-    color: #ff3366;
-    font-size: 26px;
-    margin-bottom: 15px;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(255, 0, 50, 0.6);
-}
 
-.alert-text {
-    color: #ffd6e0;
-    margin-bottom: 30px;
-    font-size: 15px;
-    line-height: 1.5;
-}
+
+
 
 .alert-btn {
     background: linear-gradient(135deg, #ff0055, #aa0022);
@@ -821,23 +765,9 @@ h2 {
     }
 }
 
-label {
-    font-weight: 500;
-    font-size: 18.5px;
-    color: #eee;
-    /* Lighten text */
-    align-self: center;
-    /* keep label centered */
-}
 
-.separator {
-    text-align: center;
-    font-weight: 500;
-    font-size: 18.5px;
-    color: #eee;
-    align-self: center;
-    /* keep separator centered */
-}
+
+
 
 /* Fix grid layout for varying input heights */
 .form-group {
@@ -849,12 +779,7 @@ label {
     transition: transform 0.3s ease;
 }
 
-/* Wrapper for input + error msg to keep grid structure */
-.input-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
+
 
 /* Realtime validation error text */
 .validation-error {
@@ -876,7 +801,7 @@ label {
 
 input[type="text"],
 input[type="date"],
-select {
+.form-group select {
     width: 100%;
     padding: 14px 18px;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -905,14 +830,14 @@ input[type="date"] {
 
 input[type="text"]:hover,
 input[type="date"]:hover,
-select:hover {
+.form-group select:hover {
     background-color: rgba(255, 255, 255, 0.12);
     border-color: rgba(0, 255, 255, 0.4);
 }
 
 input[type="text"]:focus,
 input[type="date"]:focus,
-select:focus {
+.form-group select:focus {
     outline: none;
     border-color: #00ffff;
     background-color: rgba(20, 5, 40, 0.8);
@@ -927,13 +852,13 @@ input[type="text"]:focus::placeholder {
 }
 
 /* Fix option tag colors inside select for dark mode */
-select option {
+.form-group select option {
     background-color: #220033;
     color: #fff;
     padding: 10px;
 }
 
-select {
+.form-group select {
     cursor: pointer;
     appearance: none;
     background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
@@ -1032,31 +957,14 @@ input[type="submit"]:active {
         gap: 8px;
     }
 
-    .separator {
-        display: none;
-    }
 
-    label {
-        font-size: 14px;
-        margin-left: 4px;
-    }
 
     form {
         padding: 30px 20px;
     }
 }
 
-/* Floating Shuttlecock Background Animations */
-.floating-objects {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
-}
+
 
 .shuttlecock {
     position: absolute;
