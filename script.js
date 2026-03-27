@@ -56,6 +56,7 @@ function validasiNama(event) {
     }
 
     // Trigger Success Animation if everything is valid
+    alert("Reservasi berhasil!");
     const successMsg = document.getElementById('successMessage');
 
     // Add brief fade-out to form
@@ -110,6 +111,32 @@ function resetForm() {
 
 // Interactive Cursor Glow Tracker
 document.addEventListener('DOMContentLoaded', () => {
+    // -- Real-time Validation for Nama Pengguna --
+    const namaInput = document.getElementById('id_pengguna');
+    const nameErrorSpan = document.getElementById('nameError');
+
+    // Pattern allows only letters and spaces
+    const validPattern = /^[a-zA-Z\s]*$/;
+
+    if (namaInput && nameErrorSpan) {
+        namaInput.addEventListener('input', (e) => {
+            const currentVal = e.target.value;
+
+            // If the current value doesn't match the pattern (contains special chars/numbers)
+            if (!validPattern.test(currentVal)) {
+                // Show the error message
+                nameErrorSpan.classList.add('show');
+                // Optional: apply red border immediately
+                namaInput.style.border = "1px solid red";
+            } else {
+                // Hide the error message if valid
+                nameErrorSpan.classList.remove('show');
+                namaInput.style.border = "";
+            }
+        });
+    }
+
+    // -- Cursor Glow Logic --
     // Create cursor glow element
     const glow = document.createElement('div');
     glow.classList.add('cursor-glow');
