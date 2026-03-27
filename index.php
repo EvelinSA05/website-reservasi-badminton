@@ -4,11 +4,15 @@
  * 
  * Halaman ini menggunakan:
  * - SESSION: untuk menampilkan status reservasi dan riwayat reservasi
- * - COOKIES: untuk auto-fill nama pengguna dan jam favorit
+ * - COOKIES: untuk auto-fill nama pengguna, jam mulai & jam selesai
  */
+
+// Konfigurasi session ketat (HARUS sebelum session_start)
+require_once 'session_config.php';
 
 // Mulai session - WAJIB dipanggil di awal sebelum output HTML
 session_start();
+cek_session_expired(); // Cek apakah session sudah expired
 
 // Include fungsi cookies
 require_once 'cookies.php';
@@ -17,7 +21,8 @@ require_once 'cookies.php';
 // BACA COOKIES - untuk auto-fill form
 // ============================================================
 $nama_dari_cookie = get_cookie_nama();           // Baca cookie nama_pengguna
-$jam_favorit = get_cookie_jam_favorit();           // Baca cookie jam favorit
+$jam_cookie = get_cookie_jam();                     // Baca cookie jam mulai & jam selesai
+$tanggal_dari_cookie = get_cookie_tanggal();        // Baca cookie tanggal booking
 
 // ============================================================
 // BACA SESSION - untuk status dan riwayat
@@ -221,7 +226,8 @@ unset($_SESSION['pesan']);
             <div class="form-group">
                 <label for="tanggal_booking" class="font-medium text-[18.5px] max-[550px]:text-[14px] max-[550px]:ml-[4px] text-[#eee] self-center">Tanggal Booking</label>
                 <span class="separator text-center font-medium text-[18.5px] text-[#eee] self-center max-[550px]:hidden">:</span>
-                <input type="date" id="tanggal_booking" name="tanggal_booking">
+                <input type="date" id="tanggal_booking" name="tanggal_booking"
+                       value="<?php echo htmlspecialchars($tanggal_dari_cookie); ?>">
             </div>
 
             <div class="form-group">
@@ -233,7 +239,7 @@ unset($_SESSION['pesan']);
                     <?php
                     $jam_options = ['08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00'];
                     foreach ($jam_options as $jam) {
-                        $selected = ($jam_favorit['jam_mulai'] === $jam) ? 'selected' : '';
+                        $selected = ($jam_cookie['jam_mulai'] === $jam) ? 'selected' : '';
                         echo "<option value=\"$jam\" $selected>$jam</option>";
                     }
                     ?>
@@ -249,7 +255,7 @@ unset($_SESSION['pesan']);
                     <option value="">-- Pilih Jam --</option>
                     <?php
                     foreach ($jam_options as $jam) {
-                        $selected = ($jam_favorit['jam_selesai'] === $jam) ? 'selected' : '';
+                        $selected = ($jam_cookie['jam_selesai'] === $jam) ? 'selected' : '';
                         echo "<option value=\"$jam\" $selected>$jam</option>";
                     }
                     ?>
@@ -318,7 +324,7 @@ unset($_SESSION['pesan']);
     <div class="nav-links">
         <a href="cookies.php" class="nav-link">🍪 Lihat Cookies</a>
         <?php if (!empty($riwayat) || !empty($nama_dari_cookie)) { ?>
-            <a href="logout.php" class="nav-link">🗑️ Hapus Semua Data</a>
+            <a href="reset.php" class="nav-link">🗑️ Hapus Semua Data</a>
         <?php } ?>
     </div>
 

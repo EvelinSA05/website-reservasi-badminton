@@ -1,3 +1,20 @@
+// ============================================================
+// Deteksi browser baru dibuka → hapus session PHP
+// sessionStorage PASTI hilang saat browser ditutup (tidak seperti cookies)
+// ============================================================
+if (!sessionStorage.getItem('browser_active')) {
+    // Browser baru dibuka, hapus session PHP (tapi bukan cookies)
+    fetch('reset_session.php').then(() => {
+        sessionStorage.setItem('browser_active', '1');
+        // Reload halaman agar session yang sudah dihapus ter-refleksi
+        if (document.querySelector('.riwayat-section')) {
+            location.reload();
+        }
+    });
+} else {
+    sessionStorage.setItem('browser_active', '1');
+}
+
 // Form Validation and Success Animation Override
 function validasiNama(event) {
     const form = document.getElementById('registrationForm');

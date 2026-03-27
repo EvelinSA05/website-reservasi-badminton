@@ -1,6 +1,6 @@
 <?php
 /**
- * LOGOUT.PHP - Menghapus Session & Cookies
+ * RESET.PHP - Menghapus Session & Cookies
  * 
  * File ini menghancurkan semua data session dan cookies yang tersimpan.
  * 
@@ -9,8 +9,12 @@
  * - Cookies: menggunakan setcookie() dengan waktu expired di masa lalu → browser menghapus cookie
  */
 
+// Konfigurasi session ketat (HARUS sebelum session_start)
+require_once 'session_config.php';
+
 // Mulai session agar bisa mengaksesnya
 session_start();
+cek_session_expired(); // Cek apakah session sudah expired
 
 // Include fungsi cookies
 require_once 'cookies.php';

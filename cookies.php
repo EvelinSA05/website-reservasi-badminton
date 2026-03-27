@@ -39,27 +39,46 @@ function hapus_cookie_nama() {
 }
 
 /**
- * Set cookie preferensi jam favorit
+ * Set cookie preferensi jam
  * Cookie bertahan 30 hari
  * 
- * @param string $jam_mulai - Jam mulai favorit
- * @param string $jam_selesai - Jam selesai favorit
+ * @param string $jam_mulai - Jam mulai
+ * @param string $jam_selesai - Jam selesai
  */
-function set_cookie_jam_favorit($jam_mulai, $jam_selesai) {
-    setcookie('jam_mulai_favorit', $jam_mulai, time() + (86400 * 30), '/');
-    setcookie('jam_selesai_favorit', $jam_selesai, time() + (86400 * 30), '/');
+function set_cookie_jam($jam_mulai, $jam_selesai) {
+    setcookie('jam_mulai', $jam_mulai, time() + (86400 * 30), '/');
+    setcookie('jam_selesai', $jam_selesai, time() + (86400 * 30), '/');
 }
 
 /**
- * Ambil cookie jam favorit
+ * Ambil cookie jam
  * 
  * @return array - Array berisi jam_mulai dan jam_selesai dari cookie
  */
-function get_cookie_jam_favorit() {
+function get_cookie_jam() {
     return [
-        'jam_mulai' => isset($_COOKIE['jam_mulai_favorit']) ? $_COOKIE['jam_mulai_favorit'] : '',
-        'jam_selesai' => isset($_COOKIE['jam_selesai_favorit']) ? $_COOKIE['jam_selesai_favorit'] : ''
+        'jam_mulai' => isset($_COOKIE['jam_mulai']) ? $_COOKIE['jam_mulai'] : '',
+        'jam_selesai' => isset($_COOKIE['jam_selesai']) ? $_COOKIE['jam_selesai'] : ''
     ];
+}
+
+/**
+ * Set cookie tanggal booking
+ * Cookie bertahan 30 hari
+ * 
+ * @param string $tanggal - Tanggal booking
+ */
+function set_cookie_tanggal($tanggal) {
+    setcookie('tanggal_booking', $tanggal, time() + (86400 * 30), '/');
+}
+
+/**
+ * Ambil cookie tanggal booking
+ * 
+ * @return string - Tanggal booking dari cookie, atau string kosong jika tidak ada
+ */
+function get_cookie_tanggal() {
+    return isset($_COOKIE['tanggal_booking']) ? $_COOKIE['tanggal_booking'] : '';
 }
 
 /**
@@ -67,8 +86,9 @@ function get_cookie_jam_favorit() {
  */
 function hapus_semua_cookie() {
     hapus_cookie_nama();
-    setcookie('jam_mulai_favorit', '', time() - 3600, '/');
-    setcookie('jam_selesai_favorit', '', time() - 3600, '/');
+    setcookie('jam_mulai', '', time() - 3600, '/');
+    setcookie('jam_selesai', '', time() - 3600, '/');
+    setcookie('tanggal_booking', '', time() - 3600, '/');
 }
 
 // ============================================================
@@ -76,7 +96,9 @@ function hapus_semua_cookie() {
 // tampilkan halaman info cookies yang aktif
 // ============================================================
 if (basename($_SERVER['PHP_SELF']) === 'cookies.php') {
+    require_once 'session_config.php';
     session_start();
+    cek_session_expired(); // Cek apakah session sudah expired
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -136,8 +158,9 @@ if (basename($_SERVER['PHP_SELF']) === 'cookies.php') {
         <?php
         $cookies_reservasi = [
             'nama_pengguna' => 'Nama Pengguna',
-            'jam_mulai_favorit' => 'Jam Mulai Favorit', 
-            'jam_selesai_favorit' => 'Jam Selesai Favorit'
+            'tanggal_booking' => 'Tanggal Booking',
+            'jam_mulai' => 'Jam Mulai', 
+            'jam_selesai' => 'Jam Selesai'
         ];
 
         $ada_cookie = false;
@@ -168,7 +191,7 @@ if (basename($_SERVER['PHP_SELF']) === 'cookies.php') {
         <div class="flex gap-[10px] justify-center mt-[20px]">
             <a href="index.php" class="reset-btn" style="text-decoration:none; text-align:center; padding: 10px 25px;">← Kembali ke Reservasi</a>
             <?php if ($ada_cookie) { ?>
-                <a href="logout.php" class="reset-btn" style="text-decoration:none; text-align:center; padding: 10px 25px; background: rgba(255,0,50,0.3); border-color: rgba(255,0,50,0.5);">🗑️ Hapus Semua</a>
+                <a href="reset.php" class="reset-btn" style="text-decoration:none; text-align:center; padding: 10px 25px; background: rgba(255,0,50,0.3); border-color: rgba(255,0,50,0.5);">🗑️ Hapus Semua</a>
             <?php } ?>
         </div>
     </div>

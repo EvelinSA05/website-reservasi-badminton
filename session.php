@@ -14,8 +14,12 @@
  * 3. Menandai status reservasi (berhasil/gagal)
  */
 
+// Konfigurasi session ketat (HARUS sebelum session_start)
+require_once 'session_config.php';
+
 // Mulai session - HARUS dipanggil sebelum output apapun
 session_start();
+cek_session_expired(); // Cek apakah session sudah expired
 
 // Include file cookies untuk fungsi set cookie
 require_once 'cookies.php';
@@ -83,8 +87,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Simpan nama pengguna ke cookie (30 hari) agar auto-fill saat kembali
     set_cookie_nama($nama);
     
-    // Simpan jam favorit ke cookie
-    set_cookie_jam_favorit($jam_mulai, $jam_selesai);
+    // Simpan jam mulai & jam selesai ke cookie
+    set_cookie_jam($jam_mulai, $jam_selesai);
+    
+    // Simpan tanggal booking ke cookie
+    set_cookie_tanggal($tanggal);
 
     // Redirect kembali ke index.php
     header('Location: index.php');
