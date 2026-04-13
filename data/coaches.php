@@ -1,0 +1,55 @@
+<?php
+
+return [
+    [
+        'slug' => 'coach-ardi',
+        'name' => 'Coach Ardi',
+        'specialty' => 'Footwork & Singles',
+        'level' => 'Advanced',
+        'price' => 'Mulai Rp150.000/sesi',
+        'rating' => '4.9',
+        'experience' => '7 tahun melatih komunitas dan private session.',
+        'focus' => ['Footwork efisien', 'Singles tempo cepat', 'Drill recovery'],
+        'availability' => 'Senin - Jumat, 16.00 - 21.00',
+        'summary' => 'Cocok untuk pemain yang ingin naik level di movement, transisi serang-balik, dan ritme rally single.',
+        'benefits' => [
+            'Program latihan disesuaikan dengan level dan target bermain.',
+            'Feedback teknik langsung untuk movement, split step, dan recovery.',
+            'Bisa dipadukan dengan sparring atau latihan intensif mingguan.',
+        ],
+    ],
+    [
+        'slug' => 'coach-nabila',
+        'name' => 'Coach Nabila',
+        'specialty' => 'Beginner Clinic',
+        'level' => 'Beginner',
+        'price' => 'Mulai Rp120.000/sesi',
+        'rating' => '4.8',
+        'experience' => '5 tahun menangani kelas pemula dan fun training.',
+        'focus' => ['Grip & basic stroke', 'Footwork dasar', 'Latihan percaya diri'],
+        'availability' => 'Sabtu - Minggu, 08.00 - 14.00',
+        'summary' => 'Pilihan pas untuk pemain baru yang ingin belajar teknik dasar dengan pendekatan sabar dan terstruktur.',
+        'benefits' => [
+            'Materi dasar dibuat ringan untuk pemain yang baru mulai.',
+            'Fokus pada koordinasi pukulan, posisi tubuh, dan kenyamanan bermain.',
+            'Cocok untuk sesi personal maupun latihan bareng teman.',
+        ],
+    ],
+    [
+        'slug' => 'coach-reza',
+        'name' => 'Coach Reza',
+        'specialty' => 'Doubles Strategy',
+        'level' => 'Intermediate',
+        'price' => 'Mulai Rp135.000/sesi',
+        'rating' => '4.9',
+        'experience' => '6 tahun fokus pada tactical play dan pair coordination.',
+        'focus' => ['Rotasi ganda', 'Serve-return pattern', 'Shot selection'],
+        'availability' => 'Selasa - Kamis, 18.00 - 22.00',
+        'summary' => 'Direkomendasikan untuk pair yang ingin meningkatkan komunikasi, rotasi posisi, dan strategi menyerang.',
+        'benefits' => [
+            'Analisis pola permainan dan pembagian area ganda.',
+            'Drill khusus untuk transisi defense ke attack.',
+            'Bagus untuk sparring pair atau persiapan mini turnamen komunitas.',
+        ],
+    ],
+];
