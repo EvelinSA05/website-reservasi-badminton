@@ -1,9 +1,22 @@
+// ============================================================
+// Deteksi browser baru dibuka → hapus session PHP
+// sessionStorage PASTI hilang saat browser ditutup (tidak seperti cookies)
+// ============================================================
+if (!sessionStorage.getItem('browser_active')) {
+    // Browser baru dibuka, hapus session PHP (tapi bukan cookies)
+    fetch('reset_session.php').then(() => {
+        sessionStorage.setItem('browser_active', '1');
+        // Reload halaman agar session yang sudah dihapus ter-refleksi
+        if (document.querySelector('.riwayat-section')) {
+            location.reload();
+        }
+    });
+} else {
+    sessionStorage.setItem('browser_active', '1');
+}
+
 // Form Validation and Success Animation Override
 function validasiNama(event) {
-    if (event) {
-        event.preventDefault(); // Prevent page refresh on submit
-    }
-
     const form = document.getElementById('registrationForm');
     const inputs = form.querySelectorAll('input[type="text"], input[type="date"], select');
     let isValid = true;
@@ -41,7 +54,7 @@ function validasiNama(event) {
     });
 
     if (!isValid) {
-        alert("Validasi gagal! Mohon lengkapi semua kolom yang wajib diisi.");
+        if (event) event.preventDefault(); // Prevent form submission
         // Trigger Glitch Error Shake on the whole form
         form.classList.add('error-shake');
 
@@ -55,21 +68,9 @@ function validasiNama(event) {
         return false;
     }
 
-    // Trigger Success Animation if everything is valid
-    alert("Reservasi berhasil!");
-    const successMsg = document.getElementById('successMessage');
-
-    // Add brief fade-out to form
-    form.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-    form.style.opacity = '0';
-    form.style.transform = 'scale(0.95)';
-
-    setTimeout(() => {
-        form.style.display = 'none';
-        successMsg.style.display = 'block';
-    }, 400);
-
-    return false; // Prevent traditional submission
+    // Jika valid, biarkan form tersubmit ke session.php (action di HTML)
+    // Data akan diproses oleh PHP dengan SESSION & COOKIES
+    return true;
 }
 
 // Custom Error Alert Logic
