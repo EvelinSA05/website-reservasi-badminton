@@ -1,0 +1,14 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c2d12"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="90" y="90" width="620" height="320" rx="28" fill="#fff7ed" opacity="0.95"/>
+  <text x="155" y="205" fill="#9a3412" font-size="64" font-family="Arial" font-weight="800">PROMO</text>
+  <text x="150" y="272" fill="#c2410c" font-size="44" font-family="Arial" font-weight="700">DISKON 20%</text>
+  <rect x="150" y="308" width="220" height="56" rx="14" fill="#ea580c"/>
+  <text x="188" y="345" fill="#fff" font-size="28" font-family="Arial" font-weight="700">CLAIM NOW</text>
+</svg>

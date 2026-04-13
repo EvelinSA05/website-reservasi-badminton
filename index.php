@@ -1139,6 +1139,8 @@ $reservationEntryUrl = !$user
         }
     </script>
 </body>
+</html>
+<?php return; /*
 =======
 /**
  * INDEX.PHP - Halaman Utama Reservasi Badminton
@@ -1471,4 +1473,4 @@ unset($_SESSION['pesan']);
 
     <script src="script.js"></script>
 </body>
-</html>
+*/ ?>

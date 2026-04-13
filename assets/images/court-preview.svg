@@ -1,0 +1,23 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g1)"/>
+  <rect x="80" y="60" width="640" height="380" rx="26" fill="none" stroke="#e0f2fe" stroke-width="6" opacity="0.7"/>
+  <line x1="400" y1="60" x2="400" y2="440" stroke="#e0f2fe" stroke-width="4" opacity="0.65"/>
+  <line x1="80" y1="250" x2="720" y2="250" stroke="#f0abfc" stroke-width="6" opacity="0.75"/>
+  <rect x="170" y="130" width="460" height="240" rx="18" fill="none" stroke="#a5f3fc" stroke-width="3" opacity="0.75"/>
+  <circle cx="645" cy="112" r="28" fill="#f8fafc" opacity="0.9"/>
+  <path d="M620 170 Q680 215 630 260" stroke="#f8fafc" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <circle cx="616" cy="166" r="10" fill="#f8fafc"/>
+  <path d="M180 390 C280 340 520 340 620 390" stroke="#67e8f9" stroke-width="10" fill="none" opacity="0.7"/>
+  <circle cx="130" cy="105" r="52" fill="url(#g2)" opacity="0.65"/>
+  <text x="110" y="110" fill="#f8fafc" font-size="26" font-family="Arial" font-weight="700">COURT</text>
+</svg>
