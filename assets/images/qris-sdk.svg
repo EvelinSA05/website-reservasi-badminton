@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="36" fill="#F8FAFC"/>
+  <rect x="28" y="28" width="456" height="456" rx="28" stroke="#0F172A" stroke-width="12"/>
+  <rect x="54" y="54" width="112" height="112" rx="18" fill="#0F172A"/>
+  <rect x="78" y="78" width="64" height="64" rx="10" fill="#F8FAFC"/>
+  <rect x="346" y="54" width="112" height="112" rx="18" fill="#0F172A"/>
+  <rect x="370" y="78" width="64" height="64" rx="10" fill="#F8FAFC"/>
+  <rect x="54" y="346" width="112" height="112" rx="18" fill="#0F172A"/>
+  <rect x="78" y="370" width="64" height="64" rx="10" fill="#F8FAFC"/>
+  <g fill="#0F172A">
+    <rect x="204" y="58" width="24" height="24" rx="6"/>
+    <rect x="236" y="58" width="24" height="24" rx="6"/>
+    <rect x="268" y="58" width="24" height="24" rx="6"/>
+    <rect x="204" y="90" width="24" height="24" rx="6"/>
+    <rect x="268" y="90" width="24" height="24" rx="6"/>
+    <rect x="204" y="122" width="24" height="24" rx="6"/>
+    <rect x="236" y="122" width="24" height="24" rx="6"/>
+    <rect x="268" y="122" width="24" height="24" rx="6"/>
+
+    <rect x="198" y="192" width="28" height="28" rx="6"/>
+    <rect x="236" y="192" width="28" height="28" rx="6"/>
+    <rect x="274" y="192" width="28" height="28" rx="6"/>
+    <rect x="312" y="192" width="28" height="28" rx="6"/>
+    <rect x="350" y="192" width="28" height="28" rx="6"/>
+
+    <rect x="198" y="230" width="28" height="28" rx="6"/>
+    <rect x="274" y="230" width="28" height="28" rx="6"/>
+    <rect x="350" y="230" width="28" height="28" rx="6"/>
+
+    <rect x="198" y="268" width="28" height="28" rx="6"/>
+    <rect x="236" y="268" width="28" height="28" rx="6"/>
+    <rect x="312" y="268" width="28" height="28" rx="6"/>
+    <rect x="350" y="268" width="28" height="28" rx="6"/>
+
+    <rect x="198" y="306" width="28" height="28" rx="6"/>
+    <rect x="274" y="306" width="28" height="28" rx="6"/>
+    <rect x="312" y="306" width="28" height="28" rx="6"/>
+    <rect x="350" y="306" width="28" height="28" rx="6"/>
+
+    <rect x="198" y="344" width="28" height="28" rx="6"/>
+    <rect x="236" y="344" width="28" height="28" rx="6"/>
+    <rect x="274" y="344" width="28" height="28" rx="6"/>
+    <rect x="350" y="344" width="28" height="28" rx="6"/>
+
+    <rect x="198" y="382" width="28" height="28" rx="6"/>
+    <rect x="274" y="382" width="28" height="28" rx="6"/>
+    <rect x="312" y="382" width="28" height="28" rx="6"/>
+    <rect x="350" y="382" width="28" height="28" rx="6"/>
+  </g>
+  <rect x="160" y="432" width="192" height="32" rx="16" fill="#22D3EE"/>
+  <text x="256" y="453" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#082F49">QRIS SDK HALL</text>
+</svg>
