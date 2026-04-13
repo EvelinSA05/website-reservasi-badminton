@@ -1,0 +1,17 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="250" cy="190" r="92" fill="#bfdbfe"/>
+  <rect x="170" y="290" width="160" height="130" rx="34" fill="#bfdbfe"/>
+  <circle cx="540" cy="170" r="74" fill="#a7f3d0"/>
+  <rect x="480" y="255" width="120" height="120" rx="28" fill="#a7f3d0"/>
+  <path d="M360 130 Q430 200 350 280" stroke="#f8fafc" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <circle cx="335" cy="125" r="10" fill="#f8fafc"/>
+  <rect x="420" y="315" width="230" height="90" rx="18" fill="#eef2ff" opacity="0.92"/>
+  <text x="445" y="365" fill="#1e3a8a" font-size="34" font-family="Arial" font-weight="700">COACH</text>
+</svg>
